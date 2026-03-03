@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Signal AI — Customer Intelligence Demo</title>
+  <link rel="stylesheet" href="style.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+</head>
+<body>
+
+  <!-- ============================================ -->
+  <!-- PASSWORD GATE                                 -->
+  <!-- ============================================ -->
+  <section id="gate" class="gate-screen">
+    <div class="gate-box">
+      <div class="gate-logo">
+        <svg viewBox="0 0 120 120" width="56" height="56" xmlns="http://www.w3.org/2000/svg">
+          <circle cx="60" cy="60" r="56" fill="none" stroke="#1e3a5f" stroke-width="2" opacity="0.5"/>
+          <circle cx="60" cy="60" r="42" fill="none" stroke="#1e4d8a" stroke-width="1.5" opacity="0.4"/>
+          <circle cx="60" cy="60" r="28" fill="none" stroke="#2563eb" stroke-width="1.5" opacity="0.5"/>
+          <circle cx="60" cy="60" r="14" fill="none" stroke="#3b82f6" stroke-width="1.5" opacity="0.6"/>
+          <circle cx="60" cy="60" r="3" fill="#3b82f6"/>
+          <path d="M60,60 L60,4 A56,56 0 0,1 108.5,32" fill="rgba(59,130,246,0.15)">
+            <animateTransform attributeName="transform" type="rotate" from="0 60 60" to="360 60 60" dur="4s" repeatCount="indefinite"/>
+          </path>
+          <line x1="60" y1="60" x2="60" y2="4" stroke="#3b82f6" stroke-width="2" opacity="0.8">
+            <animateTransform attributeName="transform" type="rotate" from="0 60 60" to="360 60 60" dur="4s" repeatCount="indefinite"/>
+          </line>
+        </svg>
+      </div>
+      <h2 class="gate-title">Signal AI</h2>
+      <p class="gate-subtitle">Private Demo</p>
+      <form id="gate-form" class="gate-form" autocomplete="off">
+        <input id="gate-input" type="password" class="gate-input" placeholder="Enter access code" autofocus>
+        <button type="submit" class="gate-btn">Enter →</button>
+      </form>
+      <p id="gate-error" class="gate-error"></p>
+    </div>
+  </section>
+
+  <!-- ============================================ -->
+  <!-- LANDING SCREEN                               -->
+  <!-- ============================================ -->
+  <section id="landing" class="screen active">
+    <div class="landing-content">
+      <div class="logo-area">
+        <div class="logo-icon">
+          <svg viewBox="0 0 120 120" width="80" height="80" xmlns="http://www.w3.org/2000/svg">
+            <!-- Radar background circle -->
+            <circle cx="60" cy="60" r="56" fill="none" stroke="#1e3a5f" stroke-width="2" opacity="0.5"/>
+            <!-- Radar rings -->
+            <circle cx="60" cy="60" r="42" fill="none" stroke="#1e4d8a" stroke-width="1.5" opacity="0.4"/>
+            <circle cx="60" cy="60" r="28" fill="none" stroke="#2563eb" stroke-width="1.5" opacity="0.5"/>
+            <circle cx="60" cy="60" r="14" fill="none" stroke="#3b82f6" stroke-width="1.5" opacity="0.6"/>
+            <!-- Crosshairs -->
+            <line x1="60" y1="4" x2="60" y2="116" stroke="#1e4d8a" stroke-width="0.8" opacity="0.3"/>
+            <line x1="4" y1="60" x2="116" y2="60" stroke="#1e4d8a" stroke-width="0.8" opacity="0.3"/>
+            <!-- Radar sweep (animated) -->
+            <path d="M60,60 L60,4 A56,56 0 0,1 108.5,32" fill="rgba(59,130,246,0.15)" stroke="none">
+              <animateTransform attributeName="transform" type="rotate" from="0 60 60" to="360 60 60" dur="4s" repeatCount="indefinite"/>
+            </path>
+            <!-- Sweep leading edge -->
+            <line x1="60" y1="60" x2="60" y2="4" stroke="#3b82f6" stroke-width="2" opacity="0.8">
+              <animateTransform attributeName="transform" type="rotate" from="0 60 60" to="360 60 60" dur="4s" repeatCount="indefinite"/>
+            </line>
+            <!-- Center dot -->
+            <circle cx="60" cy="60" r="3" fill="#3b82f6"/>
+            <!-- Blips (detected signals) -->
+            <circle cx="45" cy="35" r="3" fill="#60a5fa" opacity="0.9">
+              <animate attributeName="opacity" values="0.9;0.3;0.9" dur="2s" repeatCount="indefinite"/>
+            </circle>
+            <circle cx="82" cy="48" r="2.5" fill="#93c5fd" opacity="0.7">
+              <animate attributeName="opacity" values="0.7;0.2;0.7" dur="2.5s" repeatCount="indefinite"/>
+            </circle>
+            <circle cx="70" cy="78" r="2" fill="#60a5fa" opacity="0.8">
+              <animate attributeName="opacity" values="0.8;0.2;0.8" dur="3s" repeatCount="indefinite"/>
+            </circle>
+          </svg>
+        </div>
+        <h1 class="logo-text">Signal AI</h1>
+        <p class="tagline">Customer Intelligence — Delivered, Not Discovered</p>
+        <p class="subtitle">The right insight, to the right person, at the right moment</p>
+      </div>
+
+      <div class="use-case-grid">
+        <button class="uc-card" data-uc="meetingPrep" style="--accent: #3b82f6">
+          <span class="uc-emoji">⚠️</span>
+          <span class="uc-title">Meeting Prep</span>
+          <span class="uc-account">NovaTech Solutions</span>
+          <span class="uc-desc">CSM walks into renewal meeting blind</span>
+        </button>
+
+        <button class="uc-card" data-uc="collision" style="--accent: #f59e0b">
+          <span class="uc-emoji">🤝</span>
+          <span class="uc-title">Collision Detection</span>
+          <span class="uc-account">BlueWave Systems</span>
+          <span class="uc-desc">3 people contact the same customer</span>
+        </button>
+
+        <button class="uc-card" data-uc="risk" style="--accent: #ef4444">
+          <span class="uc-emoji">🚨</span>
+          <span class="uc-title">Risk Signal</span>
+          <span class="uc-account">Meridian Data</span>
+          <span class="uc-desc">The Ghost — customer went silent</span>
+        </button>
+
+        <button class="uc-card" data-uc="salesIntel" style="--accent: #8b5cf6">
+          <span class="uc-emoji">🔎</span>
+          <span class="uc-title">Sales Intelligence</span>
+          <span class="uc-account">Apex Industries</span>
+          <span class="uc-desc">AE knows 2/7 decision makers</span>
+        </button>
+      </div>
+
+      <button id="run-all-btn" class="run-all-btn">
+        <span>▶</span> Run Full Demo
+      </button>
+    </div>
+  </section>
+
+  <!-- ============================================ -->
+  <!-- DEMO SCREEN (shared by all use cases)        -->
+  <!-- ============================================ -->
+  <section id="demo" class="screen">
+    <header class="demo-header">
+      <button id="back-btn" class="back-btn">← Back</button>
+      <div class="demo-title-area">
+        <span id="demo-uc-emoji" class="demo-uc-emoji"></span>
+        <h2 id="demo-uc-title"></h2>
+        <span id="demo-account-badge" class="account-badge"></span>
+      </div>
+      <div class="demo-nav">
+        <button class="nav-dot" data-beat="0"></button>
+        <button class="nav-dot" data-beat="1"></button>
+        <button class="nav-dot" data-beat="2"></button>
+      </div>
+    </header>
+
+    <!-- Beat 1: The Problem -->
+    <div id="beat-0" class="beat">
+      <div class="beat-label">Before Signal AI</div>
+      <div id="problem-content" class="beat-content"></div>
+    </div>
+
+    <!-- Beat 2: Signal Arrives (channel mockup built by JS) -->
+    <div id="beat-1" class="beat">
+      <div class="beat-label">The Signal</div>
+      <div id="signal-content" class="beat-content"></div>
+    </div>
+
+    <!-- Beat 3: The Impact -->
+    <div id="beat-2" class="beat">
+      <div class="beat-label">After Signal AI</div>
+      <div id="impact-content" class="beat-content"></div>
+    </div>
+
+    <!-- Navigation -->
+    <div class="beat-nav">
+      <button id="prev-beat" class="beat-nav-btn">← Previous</button>
+      <div class="beat-indicator">
+        <span id="beat-num">1</span> / 3
+      </div>
+      <button id="next-beat" class="beat-nav-btn">Next →</button>
+    </div>
+  </section>
+
+  <script src="data.js"></script>
+  <script src="demo.js"></script>
+</body>
+</html>
